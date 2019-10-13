@@ -39,7 +39,7 @@ class ViewController: UIViewController {
     
     func SetupEQ () {
         print(gaina)
-        print("in initAudioEngine")
+        print("in SetupEQ")
         
         var filterParams1 = EQNode.bands[0] as AVAudioUnitEQFilterParameters
         filterParams1.filterType = .parametric
