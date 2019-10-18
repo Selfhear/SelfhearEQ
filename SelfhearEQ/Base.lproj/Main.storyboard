@@ -77,8 +77,8 @@
                                     <action selector="gain3WithSender:" destination="BYZ-38-t0r" eventType="valueChanged" id="4Cx-kw-jbw"/>
                                 </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-96" maxValue="24" translatesAutoresizingMaskIntoConstraints="NO" id="0yw-o5-0bJ" userLabel="Gain5">
-                                <rect key="frame" x="234" y="173" width="347" height="30"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-96" maxValue="24" translatesAutoresizingMaskIntoConstraints="NO" id="0yw-o5-0bJ" userLabel="Gain5">
+                                <rect key="frame" x="340" y="173" width="347" height="30"/>
                                 <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="SOV-jy-ZNX"/>
@@ -165,6 +165,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="567" height="335"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="oc3-Hi-Nug"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WjY-gx-6QK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

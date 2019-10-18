@@ -11,7 +11,25 @@ import AVFoundation
 var gaina = [Float(1),Float(1),Float(1),Float(1),Float(1)]
 var para=false
 
-//var headphonesConnected = false
+var headphonesConnected = false
+    
+extension AVAudioSession {
+
+    static var isHeadphonesConnected: Bool {
+        return sharedInstance().isHeadphonesConnected
+    }
+
+    var isHeadphonesConnected: Bool {
+        return !currentRoute.outputs.filter { $0.isHeadphones }.isEmpty
+    }
+
+}
+
+extension AVAudioSessionPortDescription {
+    var isHeadphones: Bool {
+        return portType == AVAudioSession.Port.headphones
+    }
+}
 
 class ViewController: UIViewController {
 
@@ -29,6 +47,7 @@ class ViewController: UIViewController {
         Slider3.transform=CGAffineTransform(rotationAngle: CGFloat(-M_PI_2))
         Slider4.transform=CGAffineTransform(rotationAngle: CGFloat(-M_PI_2))
         Slider5.transform=CGAffineTransform(rotationAngle: CGFloat(-M_PI_2))
+        print("isHeadphones connected: \(AVAudioSession.isHeadphonesConnected)")
         engine = AVAudioEngine()
         EQNode = AVAudioUnitEQ(numberOfBands: 5)
         EQNode.globalGain = 1
@@ -42,37 +61,35 @@ class ViewController: UIViewController {
            super.didReceiveMemoryWarning()
        }
     
-//    func activateHeadPhonesStatus(){
-//     NotificationCenter.default.addObserver(self, selector: #selector(audioRouteChangeListener(_:)), name: AVAudioSession.routeChangeNotification, object: nil)
-//    }
-//
-//    @objc func audioRouteChangeListener(_ notification:Notification) {
-//            guard let userInfo = notification.userInfo,
-//                let reasonValue = userInfo[AVAudioSessionRouteChangeReasonKey] as? UInt,
-//                let reason = AVAudioSession.RouteChangeReason(rawValue:reasonValue) else {
-//                    return
-//            }
-//            switch reason {
-//            case .newDeviceAvailable:
-//                let session = AVAudioSession.sharedInstance()
-//                for output in session.currentRoute.outputs where output.portType == AVAudioSession.Port.headphones {
-//                    headphonesConnected = true
-//                    print("headphone plugged in")
-//                    break
-//                }
-//            case .oldDeviceUnavailable:
-//                if let previousRoute =
-//                    userInfo[AVAudioSessionRouteChangePreviousRouteKey] as? AVAudioSessionRouteDescription {
-//                    for output in previousRoute.outputs where output.portType == AVAudioSession.Port.headphones {
-//                        headphonesConnected = false
-//                        print("headphone pulled out")
-//                        break
-//                    }
-//                }
-//            default: ()
-//            }
-//
-//        }
+    
+    
+    @objc func handleRouteChange(_ notification: Notification) {
+        guard
+        let userInfo = notification.userInfo,
+        let reasonRaw = userInfo[AVAudioSessionRouteChangeReasonKey] as? NSNumber,
+            let reason = AVAudioSession.RouteChangeReason(rawValue: reasonRaw.uintValue)
+        else { fatalError("Strange... could not get routeChange") }
+        switch reason {
+        case .oldDeviceUnavailable:
+            print("oldDeviceUnavailable")
+        case .newDeviceAvailable:
+            print("newDeviceAvailable")
+            if AVAudioSession.isHeadphonesConnected {
+                 print("Just connected headphones")
+            }
+        case .routeConfigurationChange:
+            print("routeConfigurationChange")
+        case .categoryChange:
+            print("categoryChange")
+        default:
+            print("not handling reason")
+        }
+    }
+
+    func listenForNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(handleRouteChange(_:)), name:AVAudioSession.routeChangeNotification, object: nil)
+    }
+
     
     override func viewWillAppear(_ animated: Bool) {
           super.viewWillAppear(animated)
