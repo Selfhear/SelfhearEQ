@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,57 +12,164 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SelfhearEQ" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-96" maxValue="24" translatesAutoresizingMaskIntoConstraints="NO" id="hEY-bM-bxH" userLabel="Gain1">
-                                <rect key="frame" x="14" y="42" width="347" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" systemColor="secondarySystemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iC7-Nm-AaE">
+                                <rect key="frame" x="20" y="20" width="567" height="335"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="zVk-8M-7Ua" kind="embed" id="DGP-8x-lVQ"/>
+                                </connections>
+                            </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="voJ-vP-3VK">
+                                <rect key="frame" x="587" y="20" width="60" height="335"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="BI0-Yl-YmF"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="TzJ-f1-gDB" kind="show" id="oer-JS-h59"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-96" maxValue="24" translatesAutoresizingMaskIntoConstraints="NO" id="hEY-bM-bxH" userLabel="Gain1">
+                                <rect key="frame" x="-80" y="173" width="347" height="30"/>
+                                <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="6yP-45-h6T"/>
+                                    <constraint firstAttribute="width" constant="343" id="uTG-Uf-JOs"/>
+                                </constraints>
                                 <connections>
                                     <action selector="gain1WithSender:" destination="BYZ-38-t0r" eventType="valueChanged" id="zs7-Yz-IYt"/>
                                 </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-96" maxValue="24" translatesAutoresizingMaskIntoConstraints="NO" id="k7P-7e-9mH" userLabel="Gain2">
-                                <rect key="frame" x="14" y="116" width="347" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-96" maxValue="24" translatesAutoresizingMaskIntoConstraints="NO" id="k7P-7e-9mH" userLabel="Gain2">
+                                <rect key="frame" x="25" y="173" width="347" height="30"/>
                                 <color key="tintColor" systemColor="secondarySystemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="f1e-SU-8sN"/>
+                                    <constraint firstAttribute="height" constant="29" id="xEw-7n-LUo"/>
+                                </constraints>
                                 <connections>
                                     <action selector="gain2WithSender:" destination="BYZ-38-t0r" eventType="valueChanged" id="7zQ-mN-jue"/>
                                 </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-96" maxValue="24" translatesAutoresizingMaskIntoConstraints="NO" id="mL8-ym-Nhi" userLabel="Gain3">
-                                <rect key="frame" x="14" y="210" width="347" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-96" maxValue="24" translatesAutoresizingMaskIntoConstraints="NO" id="0j7-Az-Ta4" userLabel="Gain4">
+                                <rect key="frame" x="235" y="173" width="347" height="30"/>
                                 <color key="tintColor" systemColor="secondarySystemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <action selector="gain3WithSender:" destination="BYZ-38-t0r" eventType="valueChanged" id="4Cx-kw-jbw"/>
-                                </connections>
-                            </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-96" maxValue="24" translatesAutoresizingMaskIntoConstraints="NO" id="0yw-o5-0bJ" userLabel="Gain5">
-                                <rect key="frame" x="14" y="356" width="347" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" systemColor="secondarySystemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <action selector="gain5WithSender:" destination="BYZ-38-t0r" eventType="valueChanged" id="ABA-MY-Pgg"/>
-                                </connections>
-                            </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-96" maxValue="24" translatesAutoresizingMaskIntoConstraints="NO" id="0j7-Az-Ta4" userLabel="Gain4">
-                                <rect key="frame" x="14" y="283" width="347" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" systemColor="secondarySystemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="Bhr-eg-EQ6"/>
+                                    <constraint firstAttribute="width" constant="343" id="t2o-1r-3hY"/>
+                                </constraints>
                                 <connections>
                                     <action selector="gain4WithSender:" destination="BYZ-38-t0r" eventType="valueChanged" id="nSW-KC-cdr"/>
                                 </connections>
                             </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-96" maxValue="24" translatesAutoresizingMaskIntoConstraints="NO" id="mL8-ym-Nhi" userLabel="Gain3">
+                                <rect key="frame" x="130" y="173" width="347" height="30"/>
+                                <color key="tintColor" systemColor="secondarySystemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="Y22-FD-DSN"/>
+                                    <constraint firstAttribute="width" constant="343" id="ada-LJ-6ey"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="gain3WithSender:" destination="BYZ-38-t0r" eventType="valueChanged" id="4Cx-kw-jbw"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-96" maxValue="24" translatesAutoresizingMaskIntoConstraints="NO" id="0yw-o5-0bJ" userLabel="Gain5">
+                                <rect key="frame" x="234" y="173" width="347" height="30"/>
+                                <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="SOV-jy-ZNX"/>
+                                    <constraint firstAttribute="width" constant="343" id="xn5-hF-2fY"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="gain5WithSender:" destination="BYZ-38-t0r" eventType="valueChanged" id="ABA-MY-Pgg"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="voJ-vP-3VK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="1WR-QU-td0"/>
+                            <constraint firstItem="k7P-7e-9mH" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="4Qx-Av-T7P"/>
+                            <constraint firstItem="hEY-bM-bxH" firstAttribute="centerX" secondItem="iC7-Nm-AaE" secondAttribute="centerX" constant="-210" id="8a8-32-Fke"/>
+                            <constraint firstItem="voJ-vP-3VK" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-20" id="AXc-Pt-Y7l"/>
+                            <constraint firstItem="0j7-Az-Ta4" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="CzX-8T-gTd"/>
+                            <constraint firstItem="iC7-Nm-AaE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="GIT-zu-jOB"/>
+                            <constraint firstItem="hEY-bM-bxH" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Imj-Xp-U33"/>
+                            <constraint firstItem="voJ-vP-3VK" firstAttribute="leading" secondItem="iC7-Nm-AaE" secondAttribute="trailing" id="XqI-Ez-dv3"/>
+                            <constraint firstItem="mL8-ym-Nhi" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="ayf-pB-bJq"/>
+                            <constraint firstItem="k7P-7e-9mH" firstAttribute="centerX" secondItem="iC7-Nm-AaE" secondAttribute="centerX" constant="-105" id="dPU-il-Ah2"/>
+                            <constraint firstItem="iC7-Nm-AaE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="eCF-KG-TO8"/>
+                            <constraint firstItem="0yw-o5-0bJ" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="iiI-Lp-uDD"/>
+                            <constraint firstItem="voJ-vP-3VK" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-20" id="jiW-mH-BnD"/>
+                            <constraint firstItem="0yw-o5-0bJ" firstAttribute="centerX" secondItem="iC7-Nm-AaE" secondAttribute="centerX" constant="210" id="lEL-ug-8gt"/>
+                            <constraint firstItem="0j7-Az-Ta4" firstAttribute="centerX" secondItem="iC7-Nm-AaE" secondAttribute="centerX" constant="105" id="oI3-uK-Ke6"/>
+                            <constraint firstItem="iC7-Nm-AaE" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-20" id="yOB-T7-K2V"/>
+                            <constraint firstItem="mL8-ym-Nhi" firstAttribute="centerX" secondItem="iC7-Nm-AaE" secondAttribute="centerX" id="yza-VR-gK1"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="zkT-v5-xdk"/>
+                    <connections>
+                        <outlet property="Slider1" destination="hEY-bM-bxH" id="7k5-RH-MHM"/>
+                        <outlet property="Slider2" destination="k7P-7e-9mH" id="qge-DO-89a"/>
+                        <outlet property="Slider3" destination="mL8-ym-Nhi" id="H9k-ct-3La"/>
+                        <outlet property="Slider4" destination="0j7-Az-Ta4" id="4j5-Co-Lxa"/>
+                        <outlet property="Slider5" destination="0yw-o5-0bJ" id="ivr-wu-uub"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138.40000000000001" y="112.89355322338831"/>
+            <point key="canvasLocation" x="136.28185907046478" y="111.2"/>
+        </scene>
+        <!--View Controller2-->
+        <scene sceneID="lCr-ul-uND">
+            <objects>
+                <viewController id="TzJ-f1-gDB" customClass="ViewController2" customModule="SelfhearEQ" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="P21-58-X5J">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3a-go-BRW">
+                                <rect key="frame" x="156" y="178" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ajn-2q-uc7">
+                                <rect key="frame" x="123" y="194" width="108" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="bmT-x8-uwQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Qui-mC-guW"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9hS-BJ-fOr"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wvg-0x-d4e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1152.8" y="-167.76611694152925"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="NNT-Sg-pCO">
+            <objects>
+                <viewController id="zVk-8M-7Ua" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nqR-Im-44h">
+                        <rect key="frame" x="0.0" y="0.0" width="567" height="335"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WjY-gx-6QK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="208" y="1065"/>
         </scene>
     </scenes>
 </document>

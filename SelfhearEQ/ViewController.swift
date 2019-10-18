@@ -11,13 +11,24 @@ import AVFoundation
 var gaina = [Float(1),Float(1),Float(1),Float(1),Float(1)]
 var para=false
 
+//var headphonesConnected = false
+
 class ViewController: UIViewController {
 
+    @IBOutlet weak var Slider1: UISlider!
+    @IBOutlet weak var Slider2: UISlider!
+    @IBOutlet weak var Slider3: UISlider!
+    @IBOutlet weak var Slider4: UISlider!
+    @IBOutlet weak var Slider5: UISlider!
     var engine:AVAudioEngine!
     var EQNode:AVAudioUnitEQ!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        Slider1.transform=CGAffineTransform(rotationAngle: CGFloat(-M_PI_2))
+        Slider2.transform=CGAffineTransform(rotationAngle: CGFloat(-M_PI_2))
+        Slider3.transform=CGAffineTransform(rotationAngle: CGFloat(-M_PI_2))
+        Slider4.transform=CGAffineTransform(rotationAngle: CGFloat(-M_PI_2))
+        Slider5.transform=CGAffineTransform(rotationAngle: CGFloat(-M_PI_2))
         engine = AVAudioEngine()
         EQNode = AVAudioUnitEQ(numberOfBands: 5)
         EQNode.globalGain = 1
@@ -31,6 +42,53 @@ class ViewController: UIViewController {
            super.didReceiveMemoryWarning()
        }
     
+//    func activateHeadPhonesStatus(){
+//     NotificationCenter.default.addObserver(self, selector: #selector(audioRouteChangeListener(_:)), name: AVAudioSession.routeChangeNotification, object: nil)
+//    }
+//
+//    @objc func audioRouteChangeListener(_ notification:Notification) {
+//            guard let userInfo = notification.userInfo,
+//                let reasonValue = userInfo[AVAudioSessionRouteChangeReasonKey] as? UInt,
+//                let reason = AVAudioSession.RouteChangeReason(rawValue:reasonValue) else {
+//                    return
+//            }
+//            switch reason {
+//            case .newDeviceAvailable:
+//                let session = AVAudioSession.sharedInstance()
+//                for output in session.currentRoute.outputs where output.portType == AVAudioSession.Port.headphones {
+//                    headphonesConnected = true
+//                    print("headphone plugged in")
+//                    break
+//                }
+//            case .oldDeviceUnavailable:
+//                if let previousRoute =
+//                    userInfo[AVAudioSessionRouteChangePreviousRouteKey] as? AVAudioSessionRouteDescription {
+//                    for output in previousRoute.outputs where output.portType == AVAudioSession.Port.headphones {
+//                        headphonesConnected = false
+//                        print("headphone pulled out")
+//                        break
+//                    }
+//                }
+//            default: ()
+//            }
+//
+//        }
+    
+    override func viewWillAppear(_ animated: Bool) {
+          super.viewWillAppear(animated)
+          UIDevice.current.setValue(UIInterfaceOrientation.landscapeLeft.rawValue, forKey: "orientation")
+      }
+    override open var shouldAutorotate: Bool {
+          return false
+      }
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask{
+          return .landscapeLeft
+      }
+    override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation{
+          return .landscapeLeft
+      }
+      
+  
     func tieupEQnode(){
         var format = engine.inputNode.inputFormat(forBus: 0)
         engine.connect(engine.inputNode, to: EQNode, format: format)

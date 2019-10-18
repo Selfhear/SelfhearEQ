@@ -14,7 +14,7 @@
 		BD946840234E348A00210B6C /* SelfhearEQ.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BD94683E234E348A00210B6C /* SelfhearEQ.xcdatamodeld */; };
 		BD946842234E348C00210B6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD946841234E348C00210B6C /* Assets.xcassets */; };
 		BD946845234E348C00210B6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD946843234E348C00210B6C /* LaunchScreen.storyboard */; };
-		BD946850234E348C00210B6C /* SelfhearEQTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD94684F234E348C00210B6C /* SelfhearEQTests.swift */; };
+		BDCECA7D235A1FC100AB349D /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCECA7C235A1FC100AB349D /* ViewController2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +38,7 @@
 		BD946844234E348C00210B6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD946846234E348C00210B6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD94684B234E348C00210B6C /* SelfhearEQTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SelfhearEQTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BD94684F234E348C00210B6C /* SelfhearEQTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfhearEQTests.swift; sourceTree = "<group>"; };
-		BD946851234E348C00210B6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BDCECA7C235A1FC100AB349D /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +63,6 @@
 			isa = PBXGroup;
 			children = (
 				BD946834234E348A00210B6C /* SelfhearEQ */,
-				BD94684E234E348C00210B6C /* SelfhearEQTests */,
 				BD946833234E348A00210B6C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -85,21 +83,13 @@
 				BD946837234E348A00210B6C /* SceneDelegate.swift */,
 				BD946839234E348A00210B6C /* ViewController.swift */,
 				BD94683B234E348A00210B6C /* Main.storyboard */,
+				BDCECA7C235A1FC100AB349D /* ViewController2.swift */,
 				BD946841234E348C00210B6C /* Assets.xcassets */,
 				BD946843234E348C00210B6C /* LaunchScreen.storyboard */,
 				BD946846234E348C00210B6C /* Info.plist */,
 				BD94683E234E348A00210B6C /* SelfhearEQ.xcdatamodeld */,
 			);
 			path = SelfhearEQ;
-			sourceTree = "<group>";
-		};
-		BD94684E234E348C00210B6C /* SelfhearEQTests */ = {
-			isa = PBXGroup;
-			children = (
-				BD94684F234E348C00210B6C /* SelfhearEQTests.swift */,
-				BD946851234E348C00210B6C /* Info.plist */,
-			);
-			path = SelfhearEQTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +193,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDCECA7D235A1FC100AB349D /* ViewController2.swift in Sources */,
 				BD94683A234E348A00210B6C /* ViewController.swift in Sources */,
 				BD946836234E348A00210B6C /* AppDelegate.swift in Sources */,
 				BD946838234E348A00210B6C /* SceneDelegate.swift in Sources */,
@@ -214,7 +205,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD946850234E348C00210B6C /* SelfhearEQTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
