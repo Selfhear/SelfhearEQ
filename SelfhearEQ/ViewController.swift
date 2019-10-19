@@ -32,7 +32,8 @@ extension AVAudioSessionPortDescription {
 }
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var Buttonn: UIButton!
     @IBOutlet weak var Slider1: UISlider!
     @IBOutlet weak var Slider2: UISlider!
     @IBOutlet weak var Slider3: UISlider!
@@ -55,10 +56,21 @@ class ViewController: UIViewController {
         SetupEQ()
         tieupEQnode()
         startEngine()
-        
-       
+        let lpgr=UILongPressGestureRecognizer(target: self, action: #selector(addAnnotation(press:)))
+        lpgr.minimumPressDuration=3.0
+        Buttonn.addGestureRecognizer(lpgr)
     }
-    
+    @objc func addAnnotation(press:UILongPressGestureRecognizer){
+        if press.state == .began{
+            if engine.isRunning{
+            engine.stop()
+            print("engin stoped")
+            }
+            let main = UIStoryboard(name:"Main",bundle: nil)
+            let sec=main.instantiateViewController(withIdentifier: "SeVC")
+            self.present(sec,animated: true,completion: nil)
+        }
+    }
     override func didReceiveMemoryWarning() {
            super.didReceiveMemoryWarning()
        }
@@ -174,6 +186,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func Done(_ sender: UIButton) {
+        print("in Done fun button",engine.isRunning)
         if engine.isRunning{
         engine.stop()
         print("engin stoped")

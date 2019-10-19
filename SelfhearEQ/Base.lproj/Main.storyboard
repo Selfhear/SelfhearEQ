@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kcs-Nb-Iov">
     <device id="retina4_7" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
@@ -7,10 +7,44 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Beginning View Controller-->
+        <scene sceneID="H97-8n-diP">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="kcs-Nb-Iov" customClass="BeginningViewController" customModule="SelfhearEQ" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="G6d-wn-M4l">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ISn-5G-ftS">
+                                <rect key="frame" x="270.5" y="227" width="126" height="48"/>
+                                <accessibility key="accessibilityConfiguration" label="Start"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ISn-5G-ftS" secondAttribute="height" multiplier="134:51" id="zve-DP-w9d"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="Starto:" destination="kcs-Nb-Iov" eventType="touchUpInside" id="BZj-RI-n8V"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Ur0-XG-RoA" firstAttribute="bottom" secondItem="ISn-5G-ftS" secondAttribute="bottom" constant="100" id="BJJ-p7-nUc"/>
+                            <constraint firstItem="ISn-5G-ftS" firstAttribute="centerX" secondItem="G6d-wn-M4l" secondAttribute="centerX" id="e66-FT-dnQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ur0-XG-RoA"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="JT1-fY-bc7"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5jT-av-bi7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="86.806596701649184" y="-1109.5999999999999"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="SelfhearEQ" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MVC" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="SelfhearEQ" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -31,7 +65,6 @@
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="Done:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r0f-Kn-KHe"/>
-                                    <segue destination="TzJ-f1-gDB" kind="show" id="WEk-U5-iK0"/>
                                 </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-96" maxValue="24" translatesAutoresizingMaskIntoConstraints="NO" id="hEY-bM-bxH" userLabel="Gain1">
@@ -114,6 +147,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="zkT-v5-xdk"/>
                     <connections>
+                        <outlet property="Buttonn" destination="voJ-vP-3VK" id="ky8-32-Si6"/>
                         <outlet property="Slider1" destination="hEY-bM-bxH" id="7k5-RH-MHM"/>
                         <outlet property="Slider2" destination="k7P-7e-9mH" id="qge-DO-89a"/>
                         <outlet property="Slider3" destination="mL8-ym-Nhi" id="H9k-ct-3La"/>
@@ -124,6 +158,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.28185907046478" y="111.2"/>
+        </scene>
+        <!--Secrete View Controller-->
+        <scene sceneID="qjL-V8-iEi">
+            <objects>
+                <viewController storyboardIdentifier="SeVC" modalPresentationStyle="fullScreen" id="cAp-XO-LBc" customClass="SecreteViewController" customModule="SelfhearEQ" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7jz-7w-oE7" customClass="Se">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q4k-dZ-NqO">
+                                <rect key="frame" x="42" y="38" width="158" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="Goto Starto"/>
+                                <connections>
+                                    <segue destination="kcs-Nb-Iov" kind="show" id="ozQ-Z2-cKx"/>
+                                </connections>
+                            </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3hI-ee-HtJ">
+                                <rect key="frame" x="42" y="97" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Language : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y2F-UU-hS0">
+                                <rect key="frame" x="119" y="102" width="90" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="y5u-ZH-HBZ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l6b-MV-4Ku" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="966" y="-1525"/>
         </scene>
         <!--View Controller2-->
         <scene sceneID="lCr-ul-uND">
@@ -143,7 +214,7 @@
                                 <rect key="frame" x="123" y="194" width="108" height="69"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="bmT-x8-uwQ"/>
+                                    <segue destination="kcs-Nb-Iov" kind="show" id="zZq-an-Tn7"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -180,4 +251,7 @@
             <point key="canvasLocation" x="208" y="1065"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="zZq-an-Tn7"/>
+    </inferredMetricsTieBreakers>
 </document>
