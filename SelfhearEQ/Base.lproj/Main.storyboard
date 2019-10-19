@@ -10,7 +10,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SelfhearEQ" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="SelfhearEQ" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -30,7 +30,8 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="TzJ-f1-gDB" kind="show" id="oer-JS-h59"/>
+                                    <action selector="Done:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r0f-Kn-KHe"/>
+                                    <segue destination="TzJ-f1-gDB" kind="show" id="WEk-U5-iK0"/>
                                 </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-96" maxValue="24" translatesAutoresizingMaskIntoConstraints="NO" id="hEY-bM-bxH" userLabel="Gain1">
@@ -127,21 +128,19 @@
         <!--View Controller2-->
         <scene sceneID="lCr-ul-uND">
             <objects>
-                <viewController id="TzJ-f1-gDB" customClass="ViewController2" customModule="SelfhearEQ" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SVC" modalPresentationStyle="fullScreen" id="TzJ-f1-gDB" customClass="ViewController2" customModule="SelfhearEQ" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P21-58-X5J">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3a-go-BRW">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3a-go-BRW">
                                 <rect key="frame" x="156" y="178" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ajn-2q-uc7">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ajn-2q-uc7">
                                 <rect key="frame" x="123" y="194" width="108" height="69"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="bmT-x8-uwQ"/>
@@ -149,6 +148,14 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Y3a-go-BRW" firstAttribute="top" secondItem="Qui-mC-guW" secondAttribute="top" constant="178" id="ACv-gN-HcM"/>
+                            <constraint firstItem="Qui-mC-guW" firstAttribute="trailing" secondItem="Ajn-2q-uc7" secondAttribute="trailing" constant="436" id="FDa-7N-04E"/>
+                            <constraint firstItem="Ajn-2q-uc7" firstAttribute="centerX" secondItem="Y3a-go-BRW" secondAttribute="centerX" id="dxd-fB-9ao"/>
+                            <constraint firstItem="Ajn-2q-uc7" firstAttribute="leading" secondItem="Qui-mC-guW" secondAttribute="leading" constant="123" id="eXb-1W-4Qh"/>
+                            <constraint firstItem="Qui-mC-guW" firstAttribute="bottom" secondItem="Ajn-2q-uc7" secondAttribute="bottom" constant="112" id="iMi-dW-M4k"/>
+                            <constraint firstItem="Ajn-2q-uc7" firstAttribute="top" secondItem="Qui-mC-guW" secondAttribute="top" constant="194" id="mFL-gR-xYd"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Qui-mC-guW"/>
                     </view>
                     <navigationItem key="navigationItem" id="9hS-BJ-fOr"/>

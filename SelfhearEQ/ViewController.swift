@@ -55,6 +55,8 @@ class ViewController: UIViewController {
         SetupEQ()
         tieupEQnode()
         startEngine()
+        
+       
     }
     
     override func didReceiveMemoryWarning() {
@@ -170,7 +172,32 @@ class ViewController: UIViewController {
             print("done start")
         }
     
-
+    
+    @IBAction func Done(_ sender: UIButton) {
+        if engine.isRunning{
+        engine.stop()
+        print("engin stoped")
+        }
+        let alert = UIAlertController(title: "Alert", message: "Are you sure to summit this result?\nThis prosess could NOT be revised.", preferredStyle: UIAlertController.Style.alert)
+        // add the actions (buttons)
+        alert.addAction(UIAlertAction(title: "Continue", style: UIAlertAction.Style.default, handler: {action in
+            print("incon")
+            let main = UIStoryboard(name:"Main",bundle: nil)
+            let second=main.instantiateViewController(withIdentifier: "SVC")
+            self.present(second,animated: true,completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: {action in
+            print("in cancle")
+            self.startEngine()
+            
+        }))
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+        print("donee")
+//        let secondViewController:ViewController2 = ViewController2()
+//
+//        self.present(secondViewController, animated: true, completion: nil)
+    }
     
     @IBAction func gain1(sender: UISlider) {
 //            var val = sender.value
