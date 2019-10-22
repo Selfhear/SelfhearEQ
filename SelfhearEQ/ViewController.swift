@@ -52,8 +52,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         // [START setup]
+        gaina = [Float(1),Float(1),Float(1),Float(1),Float(1)]
         let settings = FirestoreSettings()
-
+        settings.isPersistenceEnabled = true
         Firestore.firestore().settings = settings
         // [END setup]
         db = Firestore.firestore()
@@ -84,7 +85,8 @@ class ViewController: UIViewController {
     @objc func addAnnotation(press:UILongPressGestureRecognizer){
         if press.state == .began{
             if engine.isRunning{
-            engine.stop()
+                //engine.inputNode.removeTap(onBus: 0)
+                engine.stop()
             print("engin stoped")
             }
             let main = UIStoryboard(name:"Main",bundle: nil)
@@ -163,19 +165,23 @@ class ViewController: UIViewController {
         print("in tieupEQnode")
         //let recordingFormat = AVAudioFormat(standardFormatWithSampleRate: 44100, channels: 1)
         engine.reset()
+        print("DEBUGinTie : Before recordingFormat")
         let recordingFormat = engine.inputNode.outputFormat(forBus: 0)
-        engine.inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer: AVAudioPCMBuffer, when: AVAudioTime) in
-            print( "YES! Got some samples!")
-        }
+        print("DEBUGinTie : After recordingFormat")
+        
+//        engine.inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer: AVAudioPCMBuffer, when: AVAudioTime) in
+//            print( "YES! Got some samples!")
+//        }
+        print("DEBUGinTie : After installTap")
         configureAudioSession()
         //engine.inputNode.removeTap(onBus: 0)
         //let recordingFormat = engine.inputNode.inputFormat(forBus: 0)
         print("channelcount:",engine.inputNode.inputFormat(forBus: 0).channelCount)
         var format = engine.inputNode.inputFormat(forBus: 0)
         print("set format")
-        engine.connect(engine.inputNode, to: EQNode, format: nil)
+        engine.connect(engine.inputNode, to: EQNode, format: format)
         print("connected engine.inputNode to EQNode")
-        engine.connect(EQNode, to: engine.mainMixerNode, format: nil)
+        engine.connect(EQNode, to: engine.mainMixerNode, format: format)
         print("connected EQNode to engine.mainMixerNode")
         //engine.connect(engine.inputNode, to: engine.mainMixerNode, format: recordingFormat)
         print("tested connect")
@@ -254,6 +260,7 @@ class ViewController: UIViewController {
     @IBAction func Done(_ sender: UIButton) {
         print("in Done fun button",engine.isRunning)
         if engine.isRunning{
+            //engine.inputNode.removeTap(onBus: 0)
         engine.stop()
         print("engin stoped")
         }
