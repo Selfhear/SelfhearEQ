@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD78D9E4235EE75F00ED9589 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD78D9E3235EE75F00ED9589 /* GoogleService-Info.plist */; };
 		BD946836234E348A00210B6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD946835234E348A00210B6C /* AppDelegate.swift */; };
 		BD946838234E348A00210B6C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD946837234E348A00210B6C /* SceneDelegate.swift */; };
 		BD94683A234E348A00210B6C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD946839234E348A00210B6C /* ViewController.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BD78D9E3235EE75F00ED9589 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BD946832234E348A00210B6C /* SelfhearEQ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SelfhearEQ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD946835234E348A00210B6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD946837234E348A00210B6C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				BD946841234E348C00210B6C /* Assets.xcassets */,
 				BD946843234E348C00210B6C /* LaunchScreen.storyboard */,
 				BD946846234E348C00210B6C /* Info.plist */,
+				BD78D9E3235EE75F00ED9589 /* GoogleService-Info.plist */,
 				BD94683E234E348A00210B6C /* SelfhearEQ.xcdatamodeld */,
 			);
 			path = SelfhearEQ;
@@ -184,6 +187,7 @@
 			files = (
 				BDC0C5C8235B87CC00F964D2 /* IMG_4916.mov in Resources */,
 				BD946845234E348C00210B6C /* LaunchScreen.storyboard in Resources */,
+				BD78D9E4235EE75F00ED9589 /* GoogleService-Info.plist in Resources */,
 				BD946842234E348C00210B6C /* Assets.xcassets in Resources */,
 				BD94683D234E348A00210B6C /* Main.storyboard in Resources */,
 			);
@@ -369,6 +373,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U2S8Q8VES6;
 				INFOPLIST_FILE = SelfhearEQ/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -386,6 +391,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U2S8Q8VES6;
 				INFOPLIST_FILE = SelfhearEQ/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

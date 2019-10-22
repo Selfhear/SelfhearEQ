@@ -8,6 +8,8 @@
 
 import UIKit
 import AVFoundation
+//import AudioKit
+
 var gaina = [Float(1),Float(1),Float(1),Float(1),Float(1)]
 var para=false
 
@@ -50,12 +52,18 @@ class ViewController: UIViewController {
         Slider5.transform=CGAffineTransform(rotationAngle: CGFloat(-M_PI_2))
         print("isHeadphones connected: \(AVAudioSession.isHeadphonesConnected)")
         engine = AVAudioEngine()
+        //engine.reset()
+        //engine.inputNode.removeTap(onBus: 0)
         EQNode = AVAudioUnitEQ(numberOfBands: 5)
         EQNode.globalGain = 1
         engine.attach(EQNode)
+        print("attachNode")
         SetupEQ()
+        print("After SetupEQ")
         tieupEQnode()
+        print("After tieupEQnode")
         startEngine()
+        print("After startEngine")
         let lpgr=UILongPressGestureRecognizer(target: self, action: #selector(addAnnotation(press:)))
         lpgr.minimumPressDuration=3.0
         Buttonn.addGestureRecognizer(lpgr)
@@ -121,14 +129,41 @@ class ViewController: UIViewController {
       
   
     func tieupEQnode(){
+        print("in tieupEQnode")
+        //let recordingFormat = AVAudioFormat(standardFormatWithSampleRate: 44100, channels: 1)
+        engine.reset()
+        let recordingFormat = engine.inputNode.outputFormat(forBus: 0)
+        engine.inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer: AVAudioPCMBuffer, when: AVAudioTime) in
+            print( "YES! Got some samples!")
+        }
+        configureAudioSession()
+        //engine.inputNode.removeTap(onBus: 0)
+        //let recordingFormat = engine.inputNode.inputFormat(forBus: 0)
+        print("channelcount:",engine.inputNode.inputFormat(forBus: 0).channelCount)
         var format = engine.inputNode.inputFormat(forBus: 0)
-        engine.connect(engine.inputNode, to: EQNode, format: format)
-        engine.connect(EQNode, to: engine.mainMixerNode, format: format)
+        print("set format")
+        engine.connect(engine.inputNode, to: EQNode, format: nil)
+        print("connected engine.inputNode to EQNode")
+        engine.connect(EQNode, to: engine.mainMixerNode, format: nil)
+        print("connected EQNode to engine.mainMixerNode")
+        //engine.connect(engine.inputNode, to: engine.mainMixerNode, format: recordingFormat)
+        print("tested connect")
+    }
+    
+    private func configureAudioSession() {
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback, options: AVAudioSession.CategoryOptions.mixWithOthers)
+            print("Playback OK")
+            try AVAudioSession.sharedInstance().setActive(true)
+            print("Session is Active")
+        } catch {
+            print("ERROR: CANNOT PLAY MUSIC IN BACKGROUND.")
+        }
     }
     
     func SetupEQ () {
         print(gaina)
-        print("in initAudioEngine")
+        print("in SetupEQ")
         
         var filterParams1 = EQNode.bands[0] as AVAudioUnitEQFilterParameters
         filterParams1.filterType = .parametric
@@ -177,9 +212,9 @@ class ViewController: UIViewController {
             engine.prepare()
             print("done prepare")
             do {
-                _ = try engine.start()
+                try engine.start()
             } catch {
-                print("error")
+                print(error)
             }
             print("done start")
         }

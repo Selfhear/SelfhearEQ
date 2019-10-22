@@ -42,9 +42,9 @@ class BeginningViewController: UIViewController {
     
     @objc func playerDidFinishPlaying(note: NSNotification) {
         
+        playerViewCon.dismiss(animated: false, completion: nil)
         let main = UIStoryboard(name:"Main",bundle: nil)
         let second=main.instantiateViewController(withIdentifier: "MVC")
-        playerViewCon.dismiss(animated: false, completion: nil)
         self.present(second,animated: true,completion: nil)
     }
     

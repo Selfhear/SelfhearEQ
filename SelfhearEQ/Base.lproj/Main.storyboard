@@ -27,10 +27,19 @@
                                     <action selector="Starto:" destination="kcs-Nb-Iov" eventType="touchUpInside" id="BZj-RI-n8V"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jqg-3U-1Qf">
+                                <rect key="frame" x="294.5" y="192" width="78" height="30"/>
+                                <state key="normal" title="Quick Start"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="fsV-jO-rLU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Ur0-XG-RoA" firstAttribute="bottom" secondItem="ISn-5G-ftS" secondAttribute="bottom" constant="100" id="BJJ-p7-nUc"/>
+                            <constraint firstItem="Jqg-3U-1Qf" firstAttribute="centerX" secondItem="G6d-wn-M4l" secondAttribute="centerX" id="MVj-hO-sf0"/>
+                            <constraint firstItem="ISn-5G-ftS" firstAttribute="top" secondItem="Jqg-3U-1Qf" secondAttribute="bottom" constant="5" id="Y2w-U4-Qzb"/>
                             <constraint firstItem="ISn-5G-ftS" firstAttribute="centerX" secondItem="G6d-wn-M4l" secondAttribute="centerX" id="e66-FT-dnQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ur0-XG-RoA"/>
