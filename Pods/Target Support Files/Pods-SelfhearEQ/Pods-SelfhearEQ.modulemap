@@ -1,0 +1,6 @@
+framework module Pods_SelfhearEQ {
+  umbrella header "Pods-SelfhearEQ-umbrella.h"
+
+  export *
+  module * { export * }
+}

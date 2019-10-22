@@ -8,6 +8,9 @@
 
 import UIKit
 import AVFoundation
+import Firebase
+import FirebaseCore
+import FirebaseFirestore
 //import AudioKit
 
 var gaina = [Float(1),Float(1),Float(1),Float(1),Float(1)]
@@ -34,6 +37,8 @@ extension AVAudioSessionPortDescription {
 }
 
 class ViewController: UIViewController {
+    var db: Firestore!
+    
     
     @IBOutlet weak var Buttonn: UIButton!
     @IBOutlet weak var Slider1: UISlider!
@@ -45,6 +50,14 @@ class ViewController: UIViewController {
     var EQNode:AVAudioUnitEQ!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // [START setup]
+        let settings = FirestoreSettings()
+
+        Firestore.firestore().settings = settings
+        // [END setup]
+        db = Firestore.firestore()
+        //addAdaLovelace()
         Slider1.transform=CGAffineTransform(rotationAngle: CGFloat(-M_PI_2))
         Slider2.transform=CGAffineTransform(rotationAngle: CGFloat(-M_PI_2))
         Slider3.transform=CGAffineTransform(rotationAngle: CGFloat(-M_PI_2))
@@ -107,7 +120,25 @@ class ViewController: UIViewController {
             print("not handling reason")
         }
     }
-
+    
+    private func addAdaLovelace() {
+        // [START add_ada_lovelace]
+        // Add a new document with a generated ID
+        var ref: DocumentReference? = nil
+        ref = db.collection("users").addDocument(data: [
+            "first": "Ada",
+            "last": "Lovelace",
+            "born": 1815
+        ]) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with ID: \(ref!.documentID)")
+            }
+        }
+        // [END add_ada_lovelace]
+    }
+    
     func listenForNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(handleRouteChange(_:)), name:AVAudioSession.routeChangeNotification, object: nil)
     }
@@ -230,6 +261,21 @@ class ViewController: UIViewController {
         // add the actions (buttons)
         alert.addAction(UIAlertAction(title: "Continue", style: UIAlertAction.Style.default, handler: {action in
             print("incon")
+            var ref: DocumentReference? = nil
+            ref = self.db.collection("DataGain").addDocument(data: [
+                "g1": gaina[0],
+                "g2": gaina[1],
+                "g3": gaina[2],
+                "g4": gaina[3],
+                "g5": gaina[4]
+            ]) { err in
+                if let err = err {
+                    print("Error adding document: \(err)")
+                } else {
+                    print("Document added with ID: \(ref!.documentID)")
+                }
+            }
+            
             let main = UIStoryboard(name:"Main",bundle: nil)
             let second=main.instantiateViewController(withIdentifier: "SVC")
             self.present(second,animated: true,completion: nil)

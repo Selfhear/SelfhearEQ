@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BD78D9E4235EE75F00ED9589 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD78D9E3235EE75F00ED9589 /* GoogleService-Info.plist */; };
 		BD946836234E348A00210B6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD946835234E348A00210B6C /* AppDelegate.swift */; };
 		BD946838234E348A00210B6C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD946837234E348A00210B6C /* SceneDelegate.swift */; };
 		BD94683A234E348A00210B6C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD946839234E348A00210B6C /* ViewController.swift */; };
@@ -19,6 +18,8 @@
 		BDC0C5CA235B880F00F964D2 /* BeginningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC0C5C9235B880F00F964D2 /* BeginningViewController.swift */; };
 		BDC0C5CC235B8E2F00F964D2 /* SecreteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC0C5CB235B8E2F00F964D2 /* SecreteViewController.swift */; };
 		BDCECA7D235A1FC100AB349D /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCECA7C235A1FC100AB349D /* ViewController2.swift */; };
+		BDE17F93235EF18C00FD5A0D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BDE17F92235EF18C00FD5A0D /* GoogleService-Info.plist */; };
+		E0E2A09DFC2E5F9D033F8EB1 /* Pods_SelfhearEQ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DA420E2882A39DCA85BEC05 /* Pods_SelfhearEQ.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +33,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BD78D9E3235EE75F00ED9589 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0DA420E2882A39DCA85BEC05 /* Pods_SelfhearEQ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SelfhearEQ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		99D65B4E1FB64D998B2481F3 /* Pods-SelfhearEQ.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SelfhearEQ.debug.xcconfig"; path = "Target Support Files/Pods-SelfhearEQ/Pods-SelfhearEQ.debug.xcconfig"; sourceTree = "<group>"; };
+		AFB06705FA8E7E2738F90D65 /* Pods-SelfhearEQ.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SelfhearEQ.release.xcconfig"; path = "Target Support Files/Pods-SelfhearEQ/Pods-SelfhearEQ.release.xcconfig"; sourceTree = "<group>"; };
 		BD946832234E348A00210B6C /* SelfhearEQ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SelfhearEQ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD946835234E348A00210B6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD946837234E348A00210B6C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +50,7 @@
 		BDC0C5C9235B880F00F964D2 /* BeginningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginningViewController.swift; sourceTree = "<group>"; };
 		BDC0C5CB235B8E2F00F964D2 /* SecreteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecreteViewController.swift; sourceTree = "<group>"; };
 		BDCECA7C235A1FC100AB349D /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
+		BDE17F92235EF18C00FD5A0D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0E2A09DFC2E5F9D033F8EB1 /* Pods_SelfhearEQ.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,11 +72,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09F08104475664B618907472 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				99D65B4E1FB64D998B2481F3 /* Pods-SelfhearEQ.debug.xcconfig */,
+				AFB06705FA8E7E2738F90D65 /* Pods-SelfhearEQ.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		5F32D4C4E0E0880C51AB0CBE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0DA420E2882A39DCA85BEC05 /* Pods_SelfhearEQ.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BD946829234E348A00210B6C = {
 			isa = PBXGroup;
 			children = (
 				BD946834234E348A00210B6C /* SelfhearEQ */,
 				BD946833234E348A00210B6C /* Products */,
+				09F08104475664B618907472 /* Pods */,
+				5F32D4C4E0E0880C51AB0CBE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,7 +123,7 @@
 				BD946841234E348C00210B6C /* Assets.xcassets */,
 				BD946843234E348C00210B6C /* LaunchScreen.storyboard */,
 				BD946846234E348C00210B6C /* Info.plist */,
-				BD78D9E3235EE75F00ED9589 /* GoogleService-Info.plist */,
+				BDE17F92235EF18C00FD5A0D /* GoogleService-Info.plist */,
 				BD94683E234E348A00210B6C /* SelfhearEQ.xcdatamodeld */,
 			);
 			path = SelfhearEQ;
@@ -111,9 +136,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BD946854234E348C00210B6C /* Build configuration list for PBXNativeTarget "SelfhearEQ" */;
 			buildPhases = (
+				2880B8C37F5F9AD2F3076733 /* [CP] Check Pods Manifest.lock */,
 				BD94682E234E348A00210B6C /* Sources */,
 				BD94682F234E348A00210B6C /* Frameworks */,
 				BD946830234E348A00210B6C /* Resources */,
+				E252F88F31E3F8D0051C6015 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -187,7 +214,7 @@
 			files = (
 				BDC0C5C8235B87CC00F964D2 /* IMG_4916.mov in Resources */,
 				BD946845234E348C00210B6C /* LaunchScreen.storyboard in Resources */,
-				BD78D9E4235EE75F00ED9589 /* GoogleService-Info.plist in Resources */,
+				BDE17F93235EF18C00FD5A0D /* GoogleService-Info.plist in Resources */,
 				BD946842234E348C00210B6C /* Assets.xcassets in Resources */,
 				BD94683D234E348A00210B6C /* Main.storyboard in Resources */,
 			);
@@ -201,6 +228,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2880B8C37F5F9AD2F3076733 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SelfhearEQ-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E252F88F31E3F8D0051C6015 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SelfhearEQ/Pods-SelfhearEQ-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SelfhearEQ/Pods-SelfhearEQ-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SelfhearEQ/Pods-SelfhearEQ-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BD94682E234E348A00210B6C /* Sources */ = {
@@ -370,6 +439,7 @@
 		};
 		BD946855234E348C00210B6C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99D65B4E1FB64D998B2481F3 /* Pods-SelfhearEQ.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -388,6 +458,7 @@
 		};
 		BD946856234E348C00210B6C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AFB06705FA8E7E2738F90D65 /* Pods-SelfhearEQ.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
