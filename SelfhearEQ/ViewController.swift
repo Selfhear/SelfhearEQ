@@ -123,6 +123,8 @@ class ViewController: UIViewController {
         }
     }
     
+   
+    
     private func addAdaLovelace() {
         // [START add_ada_lovelace]
         // Add a new document with a generated ID
@@ -187,9 +189,9 @@ class ViewController: UIViewController {
         print("tested connect")
     }
     
-    private func configureAudioSession() {
+    func configureAudioSession() {
         do {
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback, options: AVAudioSession.CategoryOptions.mixWithOthers)
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playAndRecord, options: AVAudioSession.CategoryOptions.mixWithOthers)
             print("Playback OK")
             try AVAudioSession.sharedInstance().setActive(true)
             print("Session is Active")
