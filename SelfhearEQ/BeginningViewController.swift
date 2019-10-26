@@ -8,11 +8,12 @@
 
 import UIKit
 import AVKit
+var TestMode=true;
 class BeginningViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     let playerViewCon=AVPlayerViewController()

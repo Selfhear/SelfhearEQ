@@ -271,12 +271,20 @@ class ViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Continue", style: UIAlertAction.Style.default, handler: {action in
             print("incon")
             var ref: DocumentReference? = nil
-            ref = self.db.collection("DataGain").addDocument(data: [
+            var colname="TestDataGain"
+            if (TestMode==false){
+                colname="DataGain"
+            }
+            
+            ref = self.db.collection(colname).addDocument(data: [
                 "g1": gaina[0],
                 "g2": gaina[1],
                 "g3": gaina[2],
                 "g4": gaina[3],
-                "g5": gaina[4]
+                "g5": gaina[4],
+                "timestamp": NSDate().timeIntervalSince1970,
+                "Testmode": TestMode,
+                "sender":UIDevice.current.name
             ]) { err in
                 if let err = err {
                     print("Error adding document: \(err)")

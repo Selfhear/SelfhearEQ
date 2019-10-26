@@ -10,9 +10,17 @@ import UIKit
 
 class SecreteViewController: UIViewController {
 
+    @IBOutlet weak var Testmodebutt: UISwitch!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if TestMode{
+            Testmodebutt.setOn(true, animated: false)
+        }
+        else
+        {
+            Testmodebutt.setOn(false, animated: false)
+        }
         // Do any additional setup after loading the view.
     }
     
@@ -20,6 +28,17 @@ class SecreteViewController: UIViewController {
           super.viewWillAppear(animated)
           UIDevice.current.setValue(UIInterfaceOrientation.landscapeLeft.rawValue, forKey: "orientation")
       }
+    
+    @IBAction func testmodeswap(_ sender: Any) {
+        if TestMode{
+            TestMode=false
+        }
+        else
+        {
+            TestMode=true
+        }
+        print("Now Test Mode = ",TestMode)
+    }
     override open var shouldAutorotate: Bool {
           return false
       }
