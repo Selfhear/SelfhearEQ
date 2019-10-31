@@ -13,7 +13,15 @@ import FirebaseCore
 import FirebaseFirestore
 //import AudioKit
 
-var gaina = [Float(1),Float(1),Float(1),Float(1),Float(1)]
+
+
+var gaina = [Float(0),Float(0),Float(0),Float(0),Float(0)]
+
+//freqency
+var fres=[220,440,880,1760,3520]
+//Banwith
+var banws=[2,2,2,2,2]
+
 var para=false
 
 var headphonesConnected = false
@@ -207,9 +215,9 @@ class ViewController: UIViewController {
         var filterParams1 = EQNode.bands[0] as AVAudioUnitEQFilterParameters
         filterParams1.filterType = .parametric
         // 20hz to nyquist
-        filterParams1.frequency = 100
+        filterParams1.frequency = Float(fres[0])
         //The value range of values is 0.05 to 5.0 octaves
-        filterParams1.bandwidth = 2.0
+        filterParams1.bandwidth = Float(banws[0])
         filterParams1.bypass = para
         // in db -96 db through 24 d
         filterParams1.gain = gaina[0]
@@ -217,29 +225,29 @@ class ViewController: UIViewController {
         
         var filterParams2 = EQNode.bands[1] as AVAudioUnitEQFilterParameters
         filterParams2.filterType = .parametric
-        filterParams2.frequency = 400
-        filterParams2.bandwidth = 2.0
+        filterParams2.frequency = Float(fres[1])
+        filterParams2.bandwidth = Float(banws[1])
         filterParams2.bypass = para
         filterParams2.gain = gaina[1]
         
         var filterParams3 = EQNode.bands[2] as AVAudioUnitEQFilterParameters
         filterParams3.filterType = .parametric
-        filterParams3.frequency = 1600
-        filterParams3.bandwidth = 2.0
+        filterParams3.frequency = Float(fres[2])
+        filterParams3.bandwidth = Float(banws[2])
         filterParams3.bypass = para
         filterParams3.gain = gaina[2]
         
         var filterParams4 = EQNode.bands[3] as AVAudioUnitEQFilterParameters
         filterParams4.filterType = .parametric
-        filterParams4.frequency = 6400
-        filterParams4.bandwidth = 2.0
+        filterParams4.frequency = Float(fres[3])
+        filterParams4.bandwidth = Float(banws[3])
         filterParams4.bypass = para
         filterParams4.gain =  gaina[3]
         
         var filterParams5 = EQNode.bands[4] as AVAudioUnitEQFilterParameters
         filterParams5.filterType = .parametric
-        filterParams5.frequency = 25600
-        filterParams5.bandwidth = 2.0
+        filterParams5.frequency = Float(fres[4])
+        filterParams5.bandwidth = Float(banws[4])
         filterParams5.bypass = para
         filterParams5.gain =  gaina[4]
         

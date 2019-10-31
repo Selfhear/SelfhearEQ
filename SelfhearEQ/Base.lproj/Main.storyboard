@@ -71,12 +71,12 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="BI0-Yl-YmF"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Done"/>
                                 <connections>
                                     <action selector="Done:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r0f-Kn-KHe"/>
                                 </connections>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-96" maxValue="24" translatesAutoresizingMaskIntoConstraints="NO" id="hEY-bM-bxH" userLabel="Gain1">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-24" maxValue="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="hEY-bM-bxH" userLabel="Gain1">
                                 <rect key="frame" x="-80" y="173" width="347" height="30"/>
                                 <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -87,7 +87,7 @@
                                     <action selector="gain1WithSender:" destination="BYZ-38-t0r" eventType="valueChanged" id="zs7-Yz-IYt"/>
                                 </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-96" maxValue="24" translatesAutoresizingMaskIntoConstraints="NO" id="k7P-7e-9mH" userLabel="Gain2">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-24" maxValue="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="k7P-7e-9mH" userLabel="Gain2">
                                 <rect key="frame" x="25" y="173" width="347" height="30"/>
                                 <color key="tintColor" systemColor="secondarySystemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -98,7 +98,7 @@
                                     <action selector="gain2WithSender:" destination="BYZ-38-t0r" eventType="valueChanged" id="7zQ-mN-jue"/>
                                 </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-96" maxValue="24" translatesAutoresizingMaskIntoConstraints="NO" id="0j7-Az-Ta4" userLabel="Gain4">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-24" maxValue="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="0j7-Az-Ta4" userLabel="Gain4">
                                 <rect key="frame" x="235" y="173" width="347" height="30"/>
                                 <color key="tintColor" systemColor="secondarySystemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -109,7 +109,7 @@
                                     <action selector="gain4WithSender:" destination="BYZ-38-t0r" eventType="valueChanged" id="nSW-KC-cdr"/>
                                 </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-96" maxValue="24" translatesAutoresizingMaskIntoConstraints="NO" id="mL8-ym-Nhi" userLabel="Gain3">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-24" maxValue="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="mL8-ym-Nhi" userLabel="Gain3">
                                 <rect key="frame" x="130" y="173" width="347" height="30"/>
                                 <color key="tintColor" systemColor="secondarySystemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -120,7 +120,7 @@
                                     <action selector="gain3WithSender:" destination="BYZ-38-t0r" eventType="valueChanged" id="4Cx-kw-jbw"/>
                                 </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-96" maxValue="24" translatesAutoresizingMaskIntoConstraints="NO" id="0yw-o5-0bJ" userLabel="Gain5">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-24" maxValue="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="0yw-o5-0bJ" userLabel="Gain5">
                                 <rect key="frame" x="340" y="173" width="347" height="30"/>
                                 <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
