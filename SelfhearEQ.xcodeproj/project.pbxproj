@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,7 @@
 		BDC0C5CA235B880F00F964D2 /* BeginningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC0C5C9235B880F00F964D2 /* BeginningViewController.swift */; };
 		BDC0C5CC235B8E2F00F964D2 /* SecreteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC0C5CB235B8E2F00F964D2 /* SecreteViewController.swift */; };
 		BDCECA7D235A1FC100AB349D /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCECA7C235A1FC100AB349D /* ViewController2.swift */; };
+		BDD48360236AB1660087342F /* IMG_4369.PNG in Resources */ = {isa = PBXBuildFile; fileRef = BDD4835F236AB1660087342F /* IMG_4369.PNG */; };
 		BDE17F93235EF18C00FD5A0D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BDE17F92235EF18C00FD5A0D /* GoogleService-Info.plist */; };
 		E0E2A09DFC2E5F9D033F8EB1 /* Pods_SelfhearEQ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DA420E2882A39DCA85BEC05 /* Pods_SelfhearEQ.framework */; };
 /* End PBXBuildFile section */
@@ -50,6 +51,7 @@
 		BDC0C5C9235B880F00F964D2 /* BeginningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginningViewController.swift; sourceTree = "<group>"; };
 		BDC0C5CB235B8E2F00F964D2 /* SecreteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecreteViewController.swift; sourceTree = "<group>"; };
 		BDCECA7C235A1FC100AB349D /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
+		BDD4835F236AB1660087342F /* IMG_4369.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_4369.PNG; sourceTree = "<group>"; };
 		BDE17F92235EF18C00FD5A0D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,7 +80,6 @@
 				99D65B4E1FB64D998B2481F3 /* Pods-SelfhearEQ.debug.xcconfig */,
 				AFB06705FA8E7E2738F90D65 /* Pods-SelfhearEQ.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -123,6 +124,7 @@
 				BD946841234E348C00210B6C /* Assets.xcassets */,
 				BD946843234E348C00210B6C /* LaunchScreen.storyboard */,
 				BD946846234E348C00210B6C /* Info.plist */,
+				BDD4835F236AB1660087342F /* IMG_4369.PNG */,
 				BDE17F92235EF18C00FD5A0D /* GoogleService-Info.plist */,
 				BD94683E234E348A00210B6C /* SelfhearEQ.xcdatamodeld */,
 			);
@@ -215,6 +217,7 @@
 				BDC0C5C8235B87CC00F964D2 /* IMG_4916.mov in Resources */,
 				BD946845234E348C00210B6C /* LaunchScreen.storyboard in Resources */,
 				BDE17F93235EF18C00FD5A0D /* GoogleService-Info.plist in Resources */,
+				BDD48360236AB1660087342F /* IMG_4369.PNG in Resources */,
 				BD946842234E348C00210B6C /* Assets.xcassets in Resources */,
 				BD94683D234E348A00210B6C /* Main.storyboard in Resources */,
 			);
