@@ -278,28 +278,28 @@ class ViewController: UIViewController {
         // add the actions (buttons)
         alert.addAction(UIAlertAction(title: "Continue", style: UIAlertAction.Style.default, handler: {action in
             print("incon")
-            var ref: DocumentReference? = nil
-            var colname="TestDataGain"
-            if (TestMode==false){
-                colname="DataGain"
-            }
-            
-            ref = self.db.collection(colname).addDocument(data: [
-                "g1": gaina[0],
-                "g2": gaina[1],
-                "g3": gaina[2],
-                "g4": gaina[3],
-                "g5": gaina[4],
-                "timestamp": NSDate().timeIntervalSince1970,
-                "Testmode": TestMode,
-                "sender":UIDevice.current.name
-            ]) { err in
-                if let err = err {
-                    print("Error adding document: \(err)")
-                } else {
-                    print("Document added with ID: \(ref!.documentID)")
-                }
-            }
+//            var ref: DocumentReference? = nil
+//            var colname="TestDataGain"
+//            if (TestMode==false){
+//                colname="DataGain"
+//            }
+//
+//            ref = self.db.collection(colname).addDocument(data: [
+//                "g1": gaina[0],
+//                "g2": gaina[1],
+//                "g3": gaina[2],
+//                "g4": gaina[3],
+//                "g5": gaina[4],
+//                "timestamp": NSDate().timeIntervalSince1970,
+//                "Testmode": TestMode,
+//                "sender":UIDevice.current.name
+//            ]) { err in
+//                if let err = err {
+//                    print("Error adding document: \(err)")
+//                } else {
+//                    print("Document added with ID: \(ref!.documentID)")
+//                }
+//            }
             
             let main = UIStoryboard(name:"Main",bundle: nil)
             let second=main.instantiateViewController(withIdentifier: "SVC")
