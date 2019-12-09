@@ -167,6 +167,7 @@
                     <navigationItem key="navigationItem" id="zkT-v5-xdk"/>
                     <connections>
                         <outlet property="Buttonn" destination="voJ-vP-3VK" id="ky8-32-Si6"/>
+                        <outlet property="LableSayit" destination="J55-X6-6H3" id="Pnl-t7-TDY"/>
                         <outlet property="Slider1" destination="hEY-bM-bxH" id="7k5-RH-MHM"/>
                         <outlet property="Slider2" destination="k7P-7e-9mH" id="qge-DO-89a"/>
                         <outlet property="Slider3" destination="mL8-ym-Nhi" id="H9k-ct-3La"/>
@@ -262,7 +263,7 @@
                                 </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="OnS-A7-Yw1">
-                                <rect key="frame" x="174" y="132" width="612" height="162"/>
+                                <rect key="frame" x="173.5" y="131.5" width="320" height="162"/>
                                 <date key="minimumDate" timeIntervalSinceReferenceDate="-3218791324">
                                     <!--1899-01-01 11:17:56 +0000-->
                                 </date>

@@ -53,17 +53,13 @@ class ViewController2: UIViewController {
         
         
         var ref: DocumentReference? = nil
-        var colname="TestDataGain"
-        if (TestMode==false){
-            colname="DataGain"
-        }
+        var colname="users"
+//        if (TestMode==false){
+//            colname="users"
+//        }
 
         ref = self.db.collection(colname).addDocument(data: [
-            "g1": gaina[0],
-            "g2": gaina[1],
-            "g3": gaina[2],
-            "g4": gaina[3],
-            "g5": gaina[4],
+            "Userid": randomid,
             "timestamp": NSDate().timeIntervalSince1970,
             "Testmode": TestMode,
             "sender":UIDevice.current.name,

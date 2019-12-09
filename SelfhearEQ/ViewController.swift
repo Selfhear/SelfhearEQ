@@ -24,8 +24,11 @@ var banws=[2,2,2,2,2]
 
 var para=false
 
+var timeofdis=0
+
 var headphonesConnected = false
     
+var randomid=""
 extension AVAudioSession {
 
     static var isHeadphonesConnected: Bool {
@@ -58,9 +61,13 @@ class ViewController: UIViewController {
     var EQNode:AVAudioUnitEQ!
     override func viewDidLoad() {
         super.viewDidLoad()
+        timeofdis=0
         
+        
+        LableSayit.text="Say AR"
         // [START setup]
         gaina = [Float(1),Float(1),Float(1),Float(1),Float(1)]
+        randomid=randomNameString()
         let settings = FirestoreSettings()
         settings.isPersistenceEnabled = true
         Firestore.firestore().settings = settings
@@ -131,7 +138,22 @@ class ViewController: UIViewController {
         }
     }
     
-   
+   func randomNameString(length: Int = 7)->String{
+
+       enum s {
+           static let c = Array("abcdefghjklmnpqrstuvwxyz12345789")
+           static let k = UInt32(c.count)
+       }
+
+       var result = [Character](repeating: "-", count: length)
+
+       for i in 0..<length {
+           let r = Int(arc4random_uniform(s.k))
+           result[i] = s.c[r]
+       }
+
+       return String(result)
+   }
     
     private func addAdaLovelace() {
         // [START add_ada_lovelace]
@@ -266,9 +288,133 @@ class ViewController: UIViewController {
             print("done start")
         }
     
+    @IBOutlet weak var LableSayit: UILabel!
     
     @IBAction func Done(_ sender: UIButton) {
         print("in Done fun button",engine.isRunning)
+        if (timeofdis<4){
+            
+            
+            
+            if(timeofdis==0){
+                
+                var ref: DocumentReference? = nil
+                var colname="TestDataGain"
+                if (TestMode==false){
+                    colname="DataGain"
+                }
+
+                ref = self.db.collection(colname).addDocument(data: [
+                    "g1": gaina[0],
+                    "g2": gaina[1],
+                    "g3": gaina[2],
+                    "g4": gaina[3],
+                    "g5": gaina[4],
+                    "timestamp": NSDate().timeIntervalSince1970,
+                    "Testmode": TestMode,
+                    "sender":UIDevice.current.name,
+                    "Say":"AR",
+                    "Userid":randomid
+                ]) { err in
+                    if let err = err {
+                        print("Error adding document: \(err)")
+                    } else {
+                        print("Document added with ID: \(ref!.documentID)")
+                    }
+                }
+                
+                LableSayit.text="Say EE"
+            }
+            else if(timeofdis==1){
+                
+                var ref: DocumentReference? = nil
+                var colname="TestDataGain"
+                if (TestMode==false){
+                    colname="DataGain"
+                }
+
+                ref = self.db.collection(colname).addDocument(data: [
+                    "g1": gaina[0],
+                    "g2": gaina[1],
+                    "g3": gaina[2],
+                    "g4": gaina[3],
+                    "g5": gaina[4],
+                    "timestamp": NSDate().timeIntervalSince1970,
+                    "Testmode": TestMode,
+                    "sender":UIDevice.current.name,
+                    "Say":"EE",
+                    "Userid":randomid
+                ]) { err in
+                    if let err = err {
+                        print("Error adding document: \(err)")
+                    } else {
+                        print("Document added with ID: \(ref!.documentID)")
+                    }
+                }
+                
+                LableSayit.text="Say EU"
+            }
+            else if(timeofdis==2){
+                
+                var ref: DocumentReference? = nil
+                var colname="TestDataGain"
+                if (TestMode==false){
+                    colname="DataGain"
+                }
+
+                ref = self.db.collection(colname).addDocument(data: [
+                    "g1": gaina[0],
+                    "g2": gaina[1],
+                    "g3": gaina[2],
+                    "g4": gaina[3],
+                    "g5": gaina[4],
+                    "timestamp": NSDate().timeIntervalSince1970,
+                    "Testmode": TestMode,
+                    "sender":UIDevice.current.name,
+                    "Say":"EU",
+                    "Userid":randomid
+                ]) { err in
+                    if let err = err {
+                        print("Error adding document: \(err)")
+                    } else {
+                        print("Document added with ID: \(ref!.documentID)")
+                    }
+                }
+                
+                LableSayit.text="Say AA"
+            }
+            else if(timeofdis==3){
+                
+                var ref: DocumentReference? = nil
+                var colname="TestDataGain"
+                if (TestMode==false){
+                    colname="DataGain"
+                }
+
+                ref = self.db.collection(colname).addDocument(data: [
+                    "g1": gaina[0],
+                    "g2": gaina[1],
+                    "g3": gaina[2],
+                    "g4": gaina[3],
+                    "g5": gaina[4],
+                    "timestamp": NSDate().timeIntervalSince1970,
+                    "Testmode": TestMode,
+                    "sender":UIDevice.current.name,
+                    "Say":"AA",
+                    "Userid":randomid
+                ]) { err in
+                    if let err = err {
+                        print("Error adding document: \(err)")
+                    } else {
+                        print("Document added with ID: \(ref!.documentID)")
+                    }
+                }
+                
+                LableSayit.text="Say OO"
+            }
+            timeofdis=timeofdis+1
+        }
+        else{
         if engine.isRunning{
             //engine.inputNode.removeTap(onBus: 0)
         engine.stop()
@@ -278,28 +424,31 @@ class ViewController: UIViewController {
         // add the actions (buttons)
         alert.addAction(UIAlertAction(title: "Continue", style: UIAlertAction.Style.default, handler: {action in
             print("incon")
-//            var ref: DocumentReference? = nil
-//            var colname="TestDataGain"
-//            if (TestMode==false){
-//                colname="DataGain"
-//            }
-//
-//            ref = self.db.collection(colname).addDocument(data: [
-//                "g1": gaina[0],
-//                "g2": gaina[1],
-//                "g3": gaina[2],
-//                "g4": gaina[3],
-//                "g5": gaina[4],
-//                "timestamp": NSDate().timeIntervalSince1970,
-//                "Testmode": TestMode,
-//                "sender":UIDevice.current.name
-//            ]) { err in
-//                if let err = err {
-//                    print("Error adding document: \(err)")
-//                } else {
-//                    print("Document added with ID: \(ref!.documentID)")
-//                }
-//            }
+            
+            var ref: DocumentReference? = nil
+            var colname="TestDataGain"
+            if (TestMode==false){
+                colname="DataGain"
+            }
+
+            ref = self.db.collection(colname).addDocument(data: [
+                "g1": gaina[0],
+                "g2": gaina[1],
+                "g3": gaina[2],
+                "g4": gaina[3],
+                "g5": gaina[4],
+                "timestamp": NSDate().timeIntervalSince1970,
+                "Testmode": TestMode,
+                "sender":UIDevice.current.name,
+                "Say":"OO",
+                "Userid":randomid
+            ]) { err in
+                if let err = err {
+                    print("Error adding document: \(err)")
+                } else {
+                    print("Document added with ID: \(ref!.documentID)")
+                }
+            }
             
             let main = UIStoryboard(name:"Main",bundle: nil)
             let second=main.instantiateViewController(withIdentifier: "SVC")
@@ -316,7 +465,7 @@ class ViewController: UIViewController {
 //        let secondViewController:ViewController2 = ViewController2()
 //
 //        self.present(secondViewController, animated: true, completion: nil)
-    }
+        }}
     
     @IBAction func gain1(sender: UISlider) {
 //            var val = sender.value
