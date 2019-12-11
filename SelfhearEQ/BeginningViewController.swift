@@ -19,7 +19,7 @@ class BeginningViewController: UIViewController {
     let playerViewCon=AVPlayerViewController()
     @IBAction func Starto(_ sender: UIButton) {
         
-        guard let path=Bundle.main.path(forResource: "IMG_4916", ofType: "mov") else {
+        guard let path=Bundle.main.path(forResource: "Selfhear", ofType: "mp4") else {
             return
         }
         let vedioURL=URL(fileURLWithPath: path)

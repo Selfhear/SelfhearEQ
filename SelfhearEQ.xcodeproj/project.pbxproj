@@ -14,6 +14,7 @@
 		BD946840234E348A00210B6C /* SelfhearEQ.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BD94683E234E348A00210B6C /* SelfhearEQ.xcdatamodeld */; };
 		BD946842234E348C00210B6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD946841234E348C00210B6C /* Assets.xcassets */; };
 		BD946845234E348C00210B6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD946843234E348C00210B6C /* LaunchScreen.storyboard */; };
+		BDBAC4F623A0CCED00A54EE0 /* Selfhear.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = BDBAC4F523A0CCED00A54EE0 /* Selfhear.mp4 */; };
 		BDC0C5C8235B87CC00F964D2 /* IMG_4916.mov in Resources */ = {isa = PBXBuildFile; fileRef = BDC0C5C7235B87CB00F964D2 /* IMG_4916.mov */; };
 		BDC0C5CA235B880F00F964D2 /* BeginningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC0C5C9235B880F00F964D2 /* BeginningViewController.swift */; };
 		BDC0C5CC235B8E2F00F964D2 /* SecreteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC0C5CB235B8E2F00F964D2 /* SecreteViewController.swift */; };
@@ -47,6 +48,7 @@
 		BD946844234E348C00210B6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD946846234E348C00210B6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD94684B234E348C00210B6C /* SelfhearEQTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SelfhearEQTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDBAC4F523A0CCED00A54EE0 /* Selfhear.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Selfhear.mp4; sourceTree = "<group>"; };
 		BDC0C5C7235B87CB00F964D2 /* IMG_4916.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = IMG_4916.mov; path = ../../../../Desktop/IMG_4916.mov; sourceTree = "<group>"; };
 		BDC0C5C9235B880F00F964D2 /* BeginningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginningViewController.swift; sourceTree = "<group>"; };
 		BDC0C5CB235B8E2F00F964D2 /* SecreteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecreteViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				BDC0C5C7235B87CB00F964D2 /* IMG_4916.mov */,
+				BDBAC4F523A0CCED00A54EE0 /* Selfhear.mp4 */,
 				BD946835234E348A00210B6C /* AppDelegate.swift */,
 				BD946837234E348A00210B6C /* SceneDelegate.swift */,
 				BD946839234E348A00210B6C /* ViewController.swift */,
@@ -217,6 +220,7 @@
 				BDC0C5C8235B87CC00F964D2 /* IMG_4916.mov in Resources */,
 				BD946845234E348C00210B6C /* LaunchScreen.storyboard in Resources */,
 				BDE17F93235EF18C00FD5A0D /* GoogleService-Info.plist in Resources */,
+				BDBAC4F623A0CCED00A54EE0 /* Selfhear.mp4 in Resources */,
 				BDD48360236AB1660087342F /* IMG_4369.PNG in Resources */,
 				BD946842234E348C00210B6C /* Assets.xcassets in Resources */,
 				BD94683D234E348A00210B6C /* Main.storyboard in Resources */,
